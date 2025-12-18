@@ -176,7 +176,7 @@ textarea {
     gap: 0.25rem;
 }
 
-.post-actions > .icon-button {
+.action-counter > .icon-button {
     padding: 0.25rem;
 }
 
@@ -192,4 +192,29 @@ textarea {
     display: flex;
     align-items: center;
     gap: 0.25rem;
+}
+
+.rating-counters {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.action-counter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 99rem;
+    padding: 0.25rem 0.5rem;
+    background-color: #303030;
+}
+
+.post-number {
+    padding-right: 4px;
+}
+
+a {
+    text-decoration: none;
 }
