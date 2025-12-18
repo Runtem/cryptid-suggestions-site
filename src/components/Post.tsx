@@ -1,0 +1,80 @@
+import { ChipTag } from "./Chip";
+
+interface PostProps {
+    title: string;
+    status: string;
+    chips: string[];
+    description: string;
+    upvotes: number;
+    downvotes: number;
+    comments: number;
+    id: number;
+}
+
+export default function Post({
+    title,
+    status,
+    chips,
+    description,
+    upvotes,
+    downvotes,
+    comments,
+    id,
+}: PostProps) {
+    return (
+        <a className="div post" href={`/posts/${id}`}>
+            <h2 className="title">
+                {title}{" "}
+                <span className="status">
+                    <i>• {status}</i>
+                </span>
+            </h2>
+            <div className="post-chips row-bar">
+                {chips.map((chip) => (
+                    <ChipTag key={chip.toLowerCase()} id={chip.toLowerCase()} />
+                ))}
+            </div>
+            <span className="description">{description}</span>
+            <div className="row-bar post-actions">
+                <div className="rating-counters">
+                    <div className="action-counter">
+                        <button className="icon-button" id="upvote">
+                            <img
+                                src="./upvote-icon.svg"
+                                alt=""
+                                className="image"
+                                width={16}
+                                height={16}
+                            />
+                        </button>
+                        <p className="post-number">{upvotes}</p>
+                    </div>
+                    <div className="action-counter">
+                        <button className="icon-button" id="downvote">
+                            <img
+                                src="./downvote-icon.svg"
+                                alt=""
+                                className="image"
+                                width={16}
+                                height={16}
+                            />
+                        </button>
+                        <p className="post-number">{downvotes}</p>
+                    </div>
+                </div>
+                <div className="action-counter">
+                    <button className="icon-button" id="comments">
+                        <img
+                            src="./comment-icon.svg"
+                            alt=""
+                            className="image"
+                            width={16}
+                            height={16}
+                        />
+                    </button>
+                    <p className="post-number">{comments}</p>
+                </div>
+            </div>
+        </a>
+    );
+}
