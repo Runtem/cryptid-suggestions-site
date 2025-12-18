@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function App() {
     return (
         <div className="container">
@@ -13,7 +11,7 @@ function App() {
                 <img src="./vite.svg" alt="Icon" className="image" />
             </button>
             <div className="chip">
-                <img src="/src/assets/react.svg" alt="Icon" className="image" />
+                <img src="./react.svg" alt="Icon" className="image" />
                 test button
             </div>
             <div className="div post">
@@ -27,7 +25,7 @@ function App() {
                 <span className="description">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</span>
                 <div className="row-bar post-actions">
                     <button className="icon-button" id="like">
-                        <img src="./like.svg" alt="" className="image"/>
+                        <img src="./like-icon.svg" alt="" className="image"/>
                     </button>
                     1
                 </div>
