@@ -2,7 +2,7 @@ function App() {
     return (
         <div className="container">
             <button className="button">
-                <img src="/src/assets/react.svg" alt="Icon" className="image" />
+                <img src="./react.svg" alt="Icon" className="image" />
                 test button
             </button>
             <textarea placeholder="placeholder"/>
