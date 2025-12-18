@@ -1,13 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+/* import m6x11plus from offline-fonts */
+@font-face {
+    font-family: "m6x11";
+    src: url("./fonts/m6x11plus.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
 
 :root {
     --bg-color: #1f1f1f;
     --text-color: #e0e0e0;
     --accent-color: #4456ff;
-    
+
     --base-text-size: 1rem;
     --base-line-height: 1.5;
-    --font-family: 'Inter', sans-serif;
+    --font-family: "Inter", sans-serif;
 }
 
 * {
@@ -28,15 +35,58 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 8px;
+    transform: translateZ(0);
 }
 
-p, h1, h2, h3, h4, h5, h6, li, a, button {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+a,
+button {
     font-size: var(--base-text-size);
     line-height: var(--base-line-height);
     color: var(--text-color);
     font-family: var(--font-family);
+}
+
+h6 {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+h5 {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+h4 {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+h3 {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    font-family: "m6x11", sans-serif;
+    letter-spacing: 0.1rem;
+    font-style: normal;
 }
 
 button {
@@ -62,12 +112,13 @@ button {
     background-color: #3a48db;
 }
 
-.button>.image {
+.button > .image {
     width: 1rem;
     height: 1rem;
 }
 
-input,textarea {
+input,
+textarea {
     border-radius: 0.5rem;
     background: none;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -78,11 +129,13 @@ input,textarea {
     transition: 0.1s linear border;
 }
 
-input:hover,textarea:hover {
+input:hover,
+textarea:hover {
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-input:focus,textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
@@ -99,7 +152,7 @@ textarea {
     background: none;
 }
 
-.icon-button>.image {
+.icon-button > .image {
     width: 1.5rem;
     height: 1.5rem;
 }
@@ -128,7 +181,7 @@ textarea {
     justify-content: center;
 }
 
-.chip>.image {
+.chip > .image {
     width: 1rem;
     height: 1rem;
 }
@@ -144,7 +197,7 @@ textarea {
 }
 
 .post {
-    max-width: 36rem;
+    max-width: 100%;
 }
 
 .post > .title {
@@ -214,4 +267,21 @@ textarea {
 
 a {
     text-decoration: none;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: min(800px, 100%);
+    height: 100vh;
+}
+
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
 }

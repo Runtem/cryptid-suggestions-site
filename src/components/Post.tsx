@@ -1,6 +1,6 @@
 import { ChipTag } from "./Chip";
 
-interface PostProps {
+export interface PostProps {
     title: string;
     status: string;
     chips: string[];
@@ -23,12 +23,12 @@ export default function Post({
 }: PostProps) {
     return (
         <a className="div post" href={`/posts/${id}`}>
-            <h2 className="title">
+            <h3 className="title">
                 {title}{" "}
                 <span className="status">
                     <i>• {status}</i>
                 </span>
-            </h2>
+            </h3>
             <div className="post-chips row-bar">
                 {chips.map((chip) => (
                     <ChipTag key={chip.toLowerCase()} id={chip.toLowerCase()} />

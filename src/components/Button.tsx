@@ -1,7 +1,10 @@
+import React from "react";
+
 interface ButtonProps {
     onClick: () => void;
     subtitle: string;
     icon?: string,
+    style?: React.CSSProperties;
 }
 
 export function Button({ onClick, subtitle, icon }: ButtonProps) {
