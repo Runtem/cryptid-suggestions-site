@@ -14,6 +14,7 @@ function App() {
             downvotes: 1,
             comments: 1,
             id: 123,
+            author: "Author#0001",
         },
         {
             title: "Title",
@@ -25,6 +26,7 @@ function App() {
             downvotes: 1,
             comments: 1,
             id: 123,
+            author: "Author#0001",
         },
         {
             title: "Title",
@@ -36,6 +38,7 @@ function App() {
             downvotes: 1,
             comments: 1,
             id: 123,
+            author: "Author#0001",
         },
     ]);
 
@@ -56,6 +59,7 @@ function App() {
                             downvotes={post.downvotes}
                             comments={post.comments}
                             id={post.id}
+                            author={post.author}
                         />
                     ))}
                 </div>

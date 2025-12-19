@@ -9,6 +9,7 @@ export interface PostProps {
     downvotes: number;
     comments: number;
     id: number;
+    author: string;
 }
 
 export default function Post({
@@ -20,6 +21,7 @@ export default function Post({
     downvotes,
     comments,
     id,
+    author
 }: PostProps) {
     return (
         <a className="div post" href={`/posts/${id}`}>
@@ -29,6 +31,12 @@ export default function Post({
                     <i>• {status}</i>
                 </span>
             </h3>
+            <div className="post-author">
+                <div className="image-container">
+                    <img src="./react.svg" alt="PFP of the person that made this post" className="image" width={16} height={16}/>
+                </div>
+                {author}
+            </div>
             <div className="post-chips row-bar">
                 {chips.map((chip) => (
                     <ChipTag key={chip.toLowerCase()} id={chip.toLowerCase()} />
