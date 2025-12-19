@@ -1,74 +1,43 @@
 # Cryptid Suggestions Site
 The ~~first~~ ~~second~~ ~~third~~ ~~fourth~~ ~~fifth~~ sixth attempt to make a suggestions site for Cryptid. Uses React + TypeScript + Vite.
 
-## How to run locally (if you wanna do that for some reason)
-This was written by ChatGPT btw I don't have time to verify this for now
+## How to run locally
 
-### Prerequisites
+### Install these first
+* Node.js (latest version)
+* npm (comes with Node.js) or yarn if you're a weirdo
+* Git
 
-* Node.js (v18+ recommended)
-* npm (comes with Node.js) or yarn
-
-Verify installations:
-
+### Install the repo
 ```bash
-node -v
-npm -v
-# or
-# yarn -v
+git clone https://github.com/Runtem/cryptid-suggestions-site.git
+cd cryptid-suggestions-site
 ```
 
-### Installation
-
-1. Clone the repository:
-
-```bash
-git clone <repository-url>
-cd <repository-folder>
-```
-
-2. Install dependencies:
-
+### Install the dependencies
+In the main directory, install all of the dependencies via
 ```bash
 npm install
-# or
-# yarn
+```
+or
+```bash
+yarn install
 ```
 
-### Running Locally
+### Run the server
+This server will make the Firestore Database work. Make sure you get the serviceAccountKey.json from your Firebase project and put it in the main directory (and name it accordingly)
+Then, inside of /server, run
+```bash
+node server.js
+```
 
-Start the development server:
-
+### Run the frontend
+Go into /site, and then run
 ```bash
 npm run dev
-# or
-# yarn dev
 ```
-
-Open your browser and go to the URL shown in the terminal (default: [http://localhost:5173/](http://localhost:5173/)).
-
-### Building for Production
-
+If you wanna do a production build, run these commands:
 ```bash
 npm run build
-# or
-# yarn build
-```
-
-The production-ready files will be in the `dist` folder.
-
-### Preview Production Build
-
-```bash
 npm run preview
-# or
-# yarn preview
-```
-
-### Type Checking (Optional)
-
-```bash
-npm run tsc --noEmit
-# or
-# yarn tsc --noEmit
 ```
