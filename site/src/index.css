@@ -285,3 +285,10 @@ a {
     gap: 0.5rem;
     width: 100%;
 }
+
+.date-posted {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: -4px;
+    margin-bottom: 8px;
+}

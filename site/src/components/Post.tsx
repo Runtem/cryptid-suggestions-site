@@ -1,5 +1,14 @@
 import { ChipTag } from "./Chip";
 
+function formatDate(timestamp: number) {
+    const date = new Date(timestamp * 1000);
+    return date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    });
+}
+
 export interface PostProps {
     title: string;
     status: string;
@@ -9,6 +18,7 @@ export interface PostProps {
     downvotes: number;
     comments: number;
     id: number;
+    dateSubmitted: number;
 }
 
 export default function Post({
@@ -20,6 +30,7 @@ export default function Post({
     downvotes,
     comments,
     id,
+    dateSubmitted
 }: PostProps) {
     return (
         <a className="div post" href={`/posts/${id}`}>
@@ -29,6 +40,7 @@ export default function Post({
                     <i>• {status}</i>
                 </span>
             </h3>
+            <p className="date-posted">{formatDate(dateSubmitted)}</p>
             <div className="post-chips row-bar">
                 {chips.map((chip) => (
                     <ChipTag key={chip.toLowerCase()} id={chip.toLowerCase()} />

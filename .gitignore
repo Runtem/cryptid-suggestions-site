@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Service account keys (for Firestore Database)
+# Probably make an example file for anyone who wants to run this locally
+serviceAccountKey.json
