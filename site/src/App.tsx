@@ -42,7 +42,7 @@ function App() {
             id: 125,
             author: "Author#0003",
             dateSubmitted: 1445213758
-        }
+        },
     ]);
 
     return (

@@ -18,8 +18,6 @@ export interface PostProps {
     downvotes: number;
     comments: number;
     id: number;
-
-    // merged fields
     author: string;
     dateSubmitted: number;
 }
