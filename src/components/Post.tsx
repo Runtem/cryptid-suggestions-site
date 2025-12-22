@@ -24,6 +24,7 @@ export default function Post({
     author
 }: PostProps) {
     return (
+        // comment that will hopefully actually track on github aaaaaa
         <a className="div post" href={`/posts/${id}`}>
             <h3 className="title">
                 {title}{" "}
