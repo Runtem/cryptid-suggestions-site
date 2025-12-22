@@ -15,6 +15,7 @@ function App() {
             comments: 1,
             id: 123,
             author: "Author#0001",
+            dateSubmitted: 1445213758
         },
         {
             title: "Title",
@@ -25,8 +26,9 @@ function App() {
             upvotes: 1,
             downvotes: 1,
             comments: 1,
-            id: 123,
-            author: "Author#0001",
+            id: 124,
+            author: "Author#0002",
+            dateSubmitted: 1445213758
         },
         {
             title: "Title",
@@ -37,16 +39,23 @@ function App() {
             upvotes: 1,
             downvotes: 1,
             comments: 1,
-            id: 123,
-            author: "Author#0001",
-        },
+            id: 125,
+            author: "Author#0003",
+            dateSubmitted: 1445213758
+        }
     ]);
 
     return (
         <div className="container">
             <div className="content-container">
                 <h1>Welcome, User!</h1>
-                <Components.Button subtitle="Sign in with Discord" icon="./discord-icon.svg" onClick={() => {}}/>
+
+                <Components.Button
+                    subtitle="Sign in with Discord"
+                    icon="./discord-icon.svg"
+                    onClick={() => {}}
+                />
+
                 <div className="posts-list">
                     {posts.map((post, index) => (
                         <Components.Post
@@ -60,6 +69,7 @@ function App() {
                             comments={post.comments}
                             id={post.id}
                             author={post.author}
+                            dateSubmitted={post.dateSubmitted}
                         />
                     ))}
                 </div>

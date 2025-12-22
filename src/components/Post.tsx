@@ -1,5 +1,14 @@
 import { ChipTag } from "./Chip";
 
+function formatDate(timestamp: number) {
+    const date = new Date(timestamp * 1000);
+    return date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    });
+}
+
 export interface PostProps {
     title: string;
     status: string;
@@ -9,7 +18,10 @@ export interface PostProps {
     downvotes: number;
     comments: number;
     id: number;
+
+    // merged fields
     author: string;
+    dateSubmitted: number;
 }
 
 export default function Post({
@@ -21,10 +33,10 @@ export default function Post({
     downvotes,
     comments,
     id,
-    author
+    author,
+    dateSubmitted
 }: PostProps) {
     return (
-        // comment that will hopefully actually track on github aaaaaa
         <a className="div post" href={`/posts/${id}`}>
             <h3 className="title">
                 {title}{" "}
@@ -32,18 +44,30 @@ export default function Post({
                     <i>• {status}</i>
                 </span>
             </h3>
+
             <div className="post-author">
                 <div className="image-container">
-                    <img src="./react.svg" alt="PFP of the person that made this post" className="image" width={16} height={16}/>
+                    <img
+                        src="./react.svg"
+                        alt="PFP of the person that made this post"
+                        className="image"
+                        width={16}
+                        height={16}
+                    />
                 </div>
                 {author}
             </div>
+
+            <p className="date-posted">{formatDate(dateSubmitted)}</p>
+
             <div className="post-chips row-bar">
                 {chips.map((chip) => (
                     <ChipTag key={chip.toLowerCase()} id={chip.toLowerCase()} />
                 ))}
             </div>
+
             <span className="description">{description}</span>
+
             <div className="row-bar post-actions">
                 <div className="rating-counters">
                     <div className="action-counter">
@@ -58,6 +82,7 @@ export default function Post({
                         </button>
                         <p className="post-number">{upvotes}</p>
                     </div>
+
                     <div className="action-counter">
                         <button className="icon-button" id="downvote">
                             <img
@@ -71,6 +96,7 @@ export default function Post({
                         <p className="post-number">{downvotes}</p>
                     </div>
                 </div>
+
                 <div className="action-counter">
                     <button className="icon-button" id="comments">
                         <img
